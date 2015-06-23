@@ -1,0 +1,10 @@
+{% load i18n %}
+<h3>Search description</h3>
+<input type="text" size="40" name="searchDescription" value="{{ spec.description }}" style="margin-left: 40px; width:292px"><input type="submit" value="Submit" onclick="return search_description(this);"><br>
+<h3>Search brand:</h3>        
+<input type="text" size="40" name="searchBrand" value="{{ spec.search }}" style="margin-left: 40px; width:292px"><br>
+<select name="Brands" size="10" onchange="return SelectBrand(this);" style="margin-left: 40px; width: 300px">
+{% for brand in brands %}
+    <option value="{{ brand.value }}" {% if brand.selected %}selected{% endif %}> {{ brand.display }}</option>
+{% endfor %}
+</select><br>

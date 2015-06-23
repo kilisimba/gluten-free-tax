@@ -1,0 +1,7 @@
+{% load i18n %}
+<h3>Please select a year</h3>
+<select name="period" onchange="return process_period(this);">
+{% for period in periods %}
+    <option value="{{ period.display }}" {% if period.selected %}selected{% endif %}>{{ period.display }}</option>
+{% endfor %}
+</select>

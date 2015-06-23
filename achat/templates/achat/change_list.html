@@ -1,0 +1,18 @@
+{% extends "newlook/change_list.html" %}
+{% load achat_admin_list %}
+
+{# Add object-tools-filters #}
+{% block object-tools-filters %}
+    <div class="object-tools-filters">
+        {% for spec in cl.filter_specs %}{% achat_period_list_filter cl spec %}{% endfor %}
+    </div>
+{% endblock %}
+
+{% block top_summary %}
+    {% achat_summary cl %}
+{% endblock %}
+
+{% block result_list %}
+    {% achat_result_list cl %}
+{% endblock %}
+

@@ -1,0 +1,53 @@
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+#changelist table thead th.column-gluten_free_brand {
+	width: 120px;
+}
+#changelist table thead th.column-gluten_free_unit {
+	width: 40px;
+}
+#changelist table thead th.column-gluten_free_price {
+	width: 40px;
+}
+#changelist table thead th.column-equivalent_unit {
+	width: 40px;
+}
+#changelist table thead th.column-equivalent_price {
+	width: 40px;
+}
+#changelist table thead th.column-validation_date {
+	width: 120px;
+}
+/* '#changelist table thead' is required to increase priority in css */
+#changelist table thead th.column-gluten_free {
+	width: 200px;
+    white-space: normal;
+    text-align: center;
+}
+#changelist table thead th.column-equivalent {
+	width: 200px;
+    white-space: normal;
+    text-align: center;
+}
+td.field-gluten_free {
+    text-align: center;
+}
+/* Disable nowrap */
+.nowrap {
+    white-space: normal;
+}
+
+#changelist .brand_filter{
+    padding: 10px;
+    padding-bottom: 20px;
+}

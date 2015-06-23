@@ -1,0 +1,22 @@
+{% extends "newlook/change_list.html" %}
+{% load i18n %}
+{% load association_list %}
+
+{# Add object-tools-filters #}
+{% block object-tools-filters %}
+    <div class="object-tools-filters">
+        {% for spec in cl.filter_specs %}{% association_brand_list_filter cl spec %}{% endfor %}
+    </div>
+{% endblock %}
+
+{% block pagination %}
+    {{ block.super }}
+    <div class="submit-row">
+        {% if search_database %}<input type="submit" value="{% trans 'Cancel' %}" name="_cancel" />{% endif %}
+    </div>
+{% endblock %}
+
+{% block result_list %}
+    {% association_result_list cl %}
+{% endblock %}
+

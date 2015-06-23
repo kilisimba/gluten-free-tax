@@ -1,0 +1,14 @@
+
+tr.row2.pending {
+    background: rgb(255, 255, 104);
+}
+
+tr.row1.pending {
+    background: yellow;
+}
+
+#summary-label {
+    float: right;
+    margin-top: -1em;
+    margin-right: 1em;
+}

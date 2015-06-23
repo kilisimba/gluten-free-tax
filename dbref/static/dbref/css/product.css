@@ -1,0 +1,35 @@
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+th.column-unit {
+	width: 60px;
+}
+th.column-price {
+	width: 60px;
+}
+/* '#changelist table thead' is required to increase priority in css */
+#changelist table thead th.column-gluten_free {
+	width: 50px;
+    white-space: normal;
+    text-align: center;
+}
+td.field-gluten_free {
+    text-align: center;
+}
+th.column-company {
+	width: 40%;
+}
+/* Disable nowrap */
+.nowrap {
+    white-space: normal;
+}
+
