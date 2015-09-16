@@ -185,7 +185,7 @@ class AssociationAdmin(NewlookModelAdmin):
         actions = super(AssociationAdmin, self).get_actions(request)
         if 'delete_selected' in actions:
             del actions['delete_selected']
-        if not request.GET.has_key('achat'):
+        if 'achat' not in request.GET:
             del actions['update_all']
             #del actions['update_gf']
         return actions
@@ -195,7 +195,7 @@ class AssociationAdmin(NewlookModelAdmin):
             self.message_user(request, "Please select only one product", messages.ERROR)
             return
 
-        if request.GET.has_key('achat'):
+        if 'achat' in request.GET:
             recordid = request.GET.get('achat')
             post_url = reverse('admin:achat_achat_change', args=[recordid])
             post_url += '?' + urllib.urlencode({'association': queryset[0].pk})
@@ -207,7 +207,7 @@ class AssociationAdmin(NewlookModelAdmin):
             self.message_user(request, "Please select only one association", messages.WARNING)
             return
 
-        if request.GET.has_key('achat'):
+        if 'achat' in request.GET:
             recordid = request.GET.get('achat')
             post_url = reverse('admin:achat_achat_change', args=[recordid])
             post_url += '?' + urllib.urlencode({'product': queryset[0].pk})

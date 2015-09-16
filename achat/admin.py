@@ -161,7 +161,7 @@ class AchatAdmin(NewlookModelAdmin):
     # Override ModelAdmin
     def get_object(self, request, object_id, to_field):
         obj = super(AchatAdmin,self).get_object(request, object_id, to_field)
-        if request.GET.has_key('association'):
+        if 'association' in request.GET:
             association_id = request.GET.get('association')
             association_obj = Association.objects.get(pk=association_id)
             obj.description = association_obj.gluten_free.description
@@ -177,7 +177,7 @@ class AchatAdmin(NewlookModelAdmin):
                 obj.equivalent_unit = ""
                 obj.equivalent_price = ""
             return obj
-        if request.GET.has_key('product'):
+        if 'product' in request.GET:
             association_id = request.GET.get('product')
             association_obj = Association.objects.get(pk=association_id)
             obj.description = association_obj.gluten_free.description
