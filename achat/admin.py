@@ -201,7 +201,7 @@ class AchatAdmin(NewlookModelAdmin):
                 pending.save()
                 object_id = new_object.pk
             post_url = reverse('admin:dbref_association_changelist')
-            post_url += '?' + urllib.urlencode({'achat': object_id})
+            post_url += '?' + urllib.parse.urlencode({'achat': object_id})
             return HttpResponseRedirect(post_url)
 
         if request.method == 'POST' and "_cancel" in request.POST:

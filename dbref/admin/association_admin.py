@@ -198,7 +198,7 @@ class AssociationAdmin(NewlookModelAdmin):
         if 'achat' in request.GET:
             recordid = request.GET.get('achat')
             post_url = reverse('admin:achat_achat_change', args=[recordid])
-            post_url += '?' + urllib.urlencode({'association': queryset[0].pk})
+            post_url += '?' + urllib.parse.urlencode({'association': queryset[0].pk})
             return HttpResponseRedirect(post_url)
     update_all.short_description = "Select Product"
 
@@ -210,7 +210,7 @@ class AssociationAdmin(NewlookModelAdmin):
         if 'achat' in request.GET:
             recordid = request.GET.get('achat')
             post_url = reverse('admin:achat_achat_change', args=[recordid])
-            post_url += '?' + urllib.urlencode({'product': queryset[0].pk})
+            post_url += '?' + urllib.parse.urlencode({'product': queryset[0].pk})
             return HttpResponseRedirect(post_url)
     update_gf.short_description = "Update GF Only"
 
